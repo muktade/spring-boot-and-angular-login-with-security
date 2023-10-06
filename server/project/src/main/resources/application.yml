@@ -41,6 +41,8 @@ spring:
   banner:
     location: banner.txt
     
+application.title: Login With Sequrity
+application.version: 0.0.1
 
 #spring.jpa.properties.hibernate.dialect=org.sqlite.hibernate.dialect.SQLiteDialect
 #spring.jpa.database-platform=com.springboot.sqlite.SQLDialect
