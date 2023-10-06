@@ -1,10 +1,10 @@
-package com.ithouse.login;
+package com.ithouse.login.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LoginApplicationTests {
+class ProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
