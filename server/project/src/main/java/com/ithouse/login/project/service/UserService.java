@@ -2,7 +2,7 @@ package com.ithouse.login.project.service;
 
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class UserService {
 
 }

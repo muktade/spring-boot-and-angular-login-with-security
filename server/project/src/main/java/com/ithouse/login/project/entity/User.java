@@ -4,8 +4,10 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.annotation.Generated;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,8 +38,11 @@ public class User {
 	
 	@Column(name = "CREATE_DATE")
 	private Date createDate;
+
+	@Column(name = "PASSWORD")
+	private String password;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "USER_ROLE", 
 	joinColumns = @JoinColumn(name ="USER_ID"),
 	inverseJoinColumns = @JoinColumn(name="ROLE_ID"))
@@ -90,7 +95,20 @@ public class User {
 	public void setUserRoleList(Set<Role> userRoleList) {
 		this.userRoleList = userRoleList;
 	}
-	
-	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", age=" + age + ", isActive=" + isActive + ", createDate="
+				+ createDate + ", password=" + password + ", userRoleList=" + userRoleList + "]";
+	}
+
 
 }
